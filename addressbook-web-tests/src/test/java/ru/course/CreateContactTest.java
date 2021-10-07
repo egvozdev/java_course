@@ -8,16 +8,16 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class CreateContactTest {
   private WebDriver wd;
 
-  @BeforeClass(alwaysRun = true)
+  @BeforeMethod(alwaysRun = true)
   public void setUp() throws Exception {
     wd = new FirefoxDriver();
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    wd.get("https://localhost/addressbook/");
+    login("admin", "secret");
   }
 
   @Test
   public void testCreateContact() throws Exception {
-    gotoMainPage();
-    login("admin", "secret");
     creatNewContact();
     fillContactForm(new ContactData("Evgeny", "+79601830803", "Gvozdev", "egvozdev@gmail.com", "PAO Rosbank"));
     submitContactCreation();
@@ -64,7 +64,7 @@ public class CreateContactTest {
   }
 
   
-  @AfterClass(alwaysRun = true)
+  @AfterMethod(alwaysRun = true)
   public void tearDown() throws Exception {
     wd.quit();
   }

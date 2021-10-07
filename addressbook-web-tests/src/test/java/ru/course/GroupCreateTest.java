@@ -5,7 +5,7 @@ import org.testng.annotations.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class GroupCreate {
+public class GroupCreateTest {
   private WebDriver wd;
 
   @BeforeMethod(alwaysRun = true)
