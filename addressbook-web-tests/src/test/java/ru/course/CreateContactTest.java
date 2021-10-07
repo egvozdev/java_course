@@ -16,30 +16,54 @@ public class CreateContactTest {
 
   @Test
   public void testCreateContact() throws Exception {
-    wd.get("https://localhost/addressbook/group.php");
-    sendRegularField("user", "admin");
-    sendRegularField("pass", "secret");
+    gotoMainPage();
+    login("admin", "secret");
+    creatNewContact();
+    fillContactForm(new ContactData("Evgeny", "+79601830803", "Gvozdev", "egvozdev@gmail.com", "PAO Rosbank"));
+    submitContactCreation();
+  }
+
+  private void login(String user, String password) {
+    wd.findElement(By.name("user")).click();
+    wd.findElement(By.name("user")).clear();
+    wd.findElement(By.name("user")).sendKeys(user);
+    wd.findElement(By.name("pass")).click();
+    wd.findElement(By.name("pass")).clear();
+    wd.findElement(By.name("pass")).sendKeys(password);
     wd.findElement(By.xpath("//input[@value='Login']")).click();
+  }
+
+  private void gotoMainPage() {
+    wd.get("https://localhost/addressbook/group.php");
+  }
+
+  private void creatNewContact() {
     wd.findElement(By.linkText("add new")).click();
-    sendName("Evgeny");
-    sendRegularField("mobile", "+79601830803");
-    sendRegularField("lastname", "Gvozdev");
-    sendRegularField("email", "egvozdev@gmail.com");
-    sendRegularField("company", "PAO Rosbank");
-    sendRegularField("address", "Nizhniy Novgorod");
+  }
+
+  private void submitContactCreation() {
     wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
   }
 
-  private void sendRegularField(String field, String value) {
-    wd.findElement(By.name(field)).click();
-    wd.findElement(By.name(field)).clear();
-    wd.findElement(By.name(field)).sendKeys(value);
+  private void fillContactForm(ContactData contactData) {
+    wd.findElement(By.name("firstname")).click();
+    wd.findElement(By.name("firstname")).clear();
+    wd.findElement(By.name("firstname")).sendKeys(contactData.getName());
+    wd.findElement(By.name("mobile")).click();
+    wd.findElement(By.name("mobile")).clear();
+    wd.findElement(By.name("mobile")).sendKeys(contactData.getMobile());
+    wd.findElement(By.name("lastname")).click();
+    wd.findElement(By.name("lastname")).clear();
+    wd.findElement(By.name("lastname")).sendKeys(contactData.getSurname());
+    wd.findElement(By.name("email")).click();
+    wd.findElement(By.name("email")).clear();
+    wd.findElement(By.name("email")).sendKeys(contactData.getEmail());
+    wd.findElement(By.name("company")).click();
+    wd.findElement(By.name("company")).clear();
+    wd.findElement(By.name("company")).sendKeys(contactData.getCompany());
   }
 
-  private void sendName(String name) {
-    sendRegularField("firstname", name);
-  }
-
+  
   @AfterClass(alwaysRun = true)
   public void tearDown() throws Exception {
     wd.quit();
