@@ -5,6 +5,8 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class HelperBase {
   protected WebDriver wd;
 
@@ -39,5 +41,6 @@ public class HelperBase {
       return false;
     }
   }
+
 
 }
