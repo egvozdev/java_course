@@ -1,6 +1,7 @@
 package ru.course.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 import ru.course.model.ContactData;
 
 public class ContactHelper extends HelperBase {
@@ -23,6 +24,9 @@ public class ContactHelper extends HelperBase {
     type(By.name("lastname"), contactData.getSurname());
     type(By.name("email"), contactData.getEmail());
     type(By.name("company"), contactData.getCompany());
+    if (isElementPresent(By.name("new_group"))) {
+      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+    }
   }
 
   public void editContact() {
@@ -37,6 +41,7 @@ public class ContactHelper extends HelperBase {
   public void changeContactForm(By locator,  String value ) {
     type(locator, value);
   }
+
    public void deleteContact() {
     click(By.xpath("//input[@value='Delete']"));
    }
