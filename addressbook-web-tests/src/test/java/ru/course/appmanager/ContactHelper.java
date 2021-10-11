@@ -24,9 +24,9 @@ public class ContactHelper extends HelperBase {
     type(By.name("lastname"), contactData.getSurname());
     type(By.name("email"), contactData.getEmail());
     type(By.name("company"), contactData.getCompany());
-    if (isElementPresent(By.name("new_group"))) {
-      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-    }
+//    if (isElementPresent(By.name("new_group"))) {
+//      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+//    }
   }
 
   public void editContact() {
@@ -47,5 +47,17 @@ public class ContactHelper extends HelperBase {
    }
 
   public void selectContact() {
-    click(By.xpath("//tr[3]/td/input"));}
+//    click(By.xpath("//tr[3]/td/input"));}
+    click(By.xpath("//td/input"));}
+
+  public void createContact(ContactData contact) {
+    creatNewContact();
+    fillContactForm(contact);
+    submitContactCreation();
+  }
+
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.xpath("//td/input"));
+  }
 }

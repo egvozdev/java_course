@@ -15,6 +15,10 @@ public class NavigationHelper extends HelperBase {
     click(By.linkText("groups"));
   }
 
+  public void gotoHomePage() {
+    click(By.linkText("home"));
+  }
+
   public void confirm() {
     wd.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     wd.switchTo().alert().accept();

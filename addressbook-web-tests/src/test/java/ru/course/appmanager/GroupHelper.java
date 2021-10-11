@@ -48,7 +48,6 @@ public class GroupHelper extends HelperBase {
     initGroupCreation();
     fillGroupForm(groupData);
     submitGroupCreation();
-    returnToGroupPage();
   }
 
   public boolean isThereAGroup() {
