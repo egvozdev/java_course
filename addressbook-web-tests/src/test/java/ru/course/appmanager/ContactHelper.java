@@ -2,6 +2,7 @@ package ru.course.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import ru.course.model.ContactData;
 
 public class ContactHelper extends HelperBase {
@@ -18,14 +19,24 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("//div[@id='content']/form/input[21]"));
   }
 
-  public void fillContactForm(ContactData contactData) {
+  public void fillContactForm(ContactData contactData, boolean creating) {
     type(By.name("firstname"),contactData.getName());
     type(By.name("mobile"), contactData.getMobile());
     type(By.name("lastname"), contactData.getSurname());
     type(By.name("email"), contactData.getEmail());
     type(By.name("company"), contactData.getCompany());
-//    if (isElementPresent(By.name("new_group"))) {
-//      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+    if (creating) {
+      if ( contactData.getGroup() != null ) {
+        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+      }
+    } else {
+      Assert.assertFalse(isElementPresent(By.name("new_group")));
+    }
+
+    //    if (isElementPresent(By.name("new_group"))) {
+//      if ( contactData.getGroup() != null ) {
+//        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+//      }
 //    }
   }
 
@@ -51,8 +62,9 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("//td/input"));}
 
   public void createContact(ContactData contact) {
+    //String sss = wd.findElement(By.name("search_count")).getAttribute("value");
     creatNewContact();
-    fillContactForm(contact);
+    fillContactForm(contact, true);
     submitContactCreation();
   }
 
