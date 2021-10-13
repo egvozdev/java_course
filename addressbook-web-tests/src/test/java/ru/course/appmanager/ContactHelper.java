@@ -59,7 +59,8 @@ public class ContactHelper extends HelperBase {
 
   public void selectContact() {
 //    click(By.xpath("//tr[3]/td/input"));}
-    click(By.xpath("//td/input"));}
+//    click(By.xpath("//td/input"));
+    click(By.name("selected[]"));}
 
   public void createContact(ContactData contact) {
     //String sss = wd.findElement(By.name("search_count")).getAttribute("value");
