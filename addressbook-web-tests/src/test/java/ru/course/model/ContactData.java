@@ -38,9 +38,10 @@ public class ContactData {
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass())  {
-      System.out.println("ret obj\n"); return false; }
+//      System.out.println("ret obj\n");
+      return false; }
     ContactData that = (ContactData) o;
-    System.out.println("name " + Objects.equals(name, that.name) + "bef " + name + "aft " + that.name + "id " + id);
+//    System.out.println("name " + Objects.equals(name, that.name) + "bef " + name + "aft " + that.name + "id " + id);
     return Objects.equals(name, that.name) && Objects.equals(surname, that.surname) && Objects.equals(id, that.id);
   }
 

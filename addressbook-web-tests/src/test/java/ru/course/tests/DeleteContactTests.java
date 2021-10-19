@@ -11,6 +11,7 @@ public class DeleteContactTests extends TestBase{
 
   @Test
   public void testDeleteContact() throws Exception {
+    app.getNavigationHelper().gotoHomePage();
     if (! app.getContactHelper().isThereAContact()) {
       app.getContactHelper().createContact(new ContactData("Evgeny", "+79601830803", "Gvozdev", "egvozdev@gmail.com", "PAO Rosbank", "test1"));
       app.getNavigationHelper().gotoHomePage();
@@ -36,8 +37,8 @@ public class DeleteContactTests extends TestBase{
 
     before.sort(byId);
     after.sort(byId);
-    System.out.println("before1 " + before.size());
-    System.out.println("after1 " + after.size());
+//    System.out.println("before1 " + before.size());
+//    System.out.println("after1 " + after.size());
     Assert.assertEquals(before, after);
   }
 
