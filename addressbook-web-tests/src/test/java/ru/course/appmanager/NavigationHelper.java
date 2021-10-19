@@ -20,7 +20,7 @@ public class NavigationHelper extends HelperBase {
   }
 
   public void confirm() {
-    wd.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+    wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
     wd.switchTo().alert().accept();
   }
 }

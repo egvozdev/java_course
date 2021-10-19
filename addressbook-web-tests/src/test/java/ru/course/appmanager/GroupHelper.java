@@ -2,7 +2,11 @@ package ru.course.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import ru.course.model.GroupData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GroupHelper extends HelperBase {
 
@@ -32,8 +36,8 @@ public class GroupHelper extends HelperBase {
     click(By.xpath("//div[@id='content']/form/input[5]"));
   }
 
-  public void selectGroups() {
-    click(By.name("selected[]"));
+  public void selectGroups(int index) {
+    wd.findElements(By.name("selected[]")).get(index).click();
   }
 
   public void initGroupModification() {
@@ -52,5 +56,22 @@ public class GroupHelper extends HelperBase {
 
   public boolean isThereAGroup() {
     return isElementPresent(By.name("selected[]"));
+  }
+
+  public int getGroupCount() {
+    return wd.findElements(By.name("selected[]")).size();
+  }
+
+  public List<GroupData> getGroupList() {
+    List<GroupData> groups = new ArrayList<GroupData>();
+    List<WebElement> elements  = wd.findElements(By.cssSelector("span.group"));
+    for (WebElement el: elements) {
+      String name = el.getText();
+      Integer id = Integer.valueOf(el.findElement(By.tagName("input")).getAttribute("value"));
+//      System.out.println("id " + id);
+      GroupData group = new GroupData(name, null,  null, id);
+      groups.add(group);
+    }
+    return groups;
   }
 }

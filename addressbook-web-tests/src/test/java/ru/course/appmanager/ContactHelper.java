@@ -1,9 +1,14 @@
 package ru.course.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.course.model.ContactData;
+import ru.course.model.GroupData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactHelper extends HelperBase {
 
@@ -57,10 +62,11 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("//input[@value='Delete']"));
    }
 
-  public void selectContact() {
+  public void selectContact(Integer index) {
 //    click(By.xpath("//tr[3]/td/input"));}
 //    click(By.xpath("//td/input"));
-    click(By.name("selected[]"));}
+      wd.findElements(By.name("selected[]")).get(index).click();
+  }
 
   public void createContact(ContactData contact) {
     //String sss = wd.findElement(By.name("search_count")).getAttribute("value");
@@ -72,5 +78,32 @@ public class ContactHelper extends HelperBase {
 
   public boolean isThereAContact() {
     return isElementPresent(By.xpath("//td/input"));
+  }
+
+  public List<ContactData> getContactList() {
+    List<ContactData> contacts = new ArrayList<ContactData>();
+//    List<WebElement> elements  = wd.findElements(By.cssSelector("tr"));
+//    List<WebElement> elements  = wd.findElements(By.cssSelector("title~entry"));
+
+    List<WebElement> elements  = wd.findElements(By.name("entry"));
+
+    List<WebElement> el1;
+    for (WebElement el: elements) {
+//      System.out.println("text" + el.getText());
+//      System.out.println("atr" + el.getAttribute());
+//      System.out.println("tag" + el.getTagName());
+//      System.out.println("child 1 " + el.findElement(By.cssSelector(":first-child")).getText());
+//      System.out.println("child 2 " + el.findElement(By.cssSelector(":nth-child(2)")).getText());
+//      System.out.println("child 3 " + el.findElement(By.cssSelector(":nth-child(3)")).getText());
+//      System.out.println("id  " + el.findElement(By.tagName("input")).getAttribute("value"));
+//      System.out.println("id  " + el.findElement(By.name("input")).getAttribute());
+      String name = el.findElement(By.cssSelector(":nth-child(3)")).getText();
+      String surname = el.findElement(By.cssSelector(":nth-child(2)")).getText();
+      Integer id = Integer.valueOf(el.findElement(By.tagName("input")).getAttribute("value"));
+//      System.out.println("id " + id);
+      ContactData contact = new ContactData(name, surname, id);
+      contacts.add(contact);
+    }
+    return contacts;
   }
 }
