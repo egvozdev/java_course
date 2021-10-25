@@ -6,11 +6,13 @@ import ru.course.model.GroupData;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 
 public class DeleteGroupTest extends TestBase {
 
-  @BeforeMethod
+  @BeforeMethod(alwaysRun = true)
   public void ensurePreconditions() {
+    app.goTo().groupPage();
     if (! app.group().isThereAGroup()) {
       app.group().create(new GroupData().withName("test1-autocreated").withFooter("test2").withHeader("test3"));
       app.goTo().groupPage();
@@ -19,25 +21,20 @@ public class DeleteGroupTest extends TestBase {
 
   @Test
   public void testDeleteGroup() throws Exception {
-    app.goTo().groupPage();
-    List<GroupData> before = app.group().list();
-    int indexToRemove = before.size()-1;
-    app.group().selectGroups(indexToRemove);
-    app.group().deleteSelectedGroups();
-    before.remove(indexToRemove);
-    app.goTo().groupPage();
-    List<GroupData> after = app.group().list();
-    Assert.assertEquals (before.size(), after.size());
 
-//    for (int i = 0; i < before.size(); i++) {
-//      Assert.assertEquals(before.get(i), after.get(i));
-//    }
-    Comparator<? super GroupData> byId = (o1, o2) -> Integer.compare(o1.getId(), o2.getId());
-    before.sort(byId);
-    after.sort(byId);
+    app.goTo().groupPage();
+    Set<GroupData> before = app.group().all();
+    GroupData deletedGroup = before.iterator().next();
+    app.group().delete(deletedGroup);
+//    app.goTo().groupPage();
+    Set<GroupData> after = app.group().all();
+    Assert.assertEquals (before.size()-1, after.size());
+
+    before.remove(deletedGroup);
     Assert.assertEquals(before, after);
 
   }
+
 
 
 }
