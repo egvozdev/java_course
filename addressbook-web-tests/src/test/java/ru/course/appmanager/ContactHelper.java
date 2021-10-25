@@ -61,17 +61,17 @@ public class ContactHelper extends HelperBase {
     type(locator, value);
   }
 
-   public void deleteContact() {
+   public void delete() {
     click(By.xpath("//input[@value='Delete']"));
    }
 
-  public void selectContact(Integer index) {
+  public void select(Integer index) {
 //    click(By.xpath("//tr[3]/td/input"));}
 //    click(By.xpath("//td/input"));
       wd.findElements(By.name("selected[]")).get(index).click();
   }
 
-  public void createContact(ContactData contact) {
+  public void create(ContactData contact) {
     //String sss = wd.findElement(By.name("search_count")).getAttribute("value");
     creatNewContact();
     fillContactForm(contact, true);

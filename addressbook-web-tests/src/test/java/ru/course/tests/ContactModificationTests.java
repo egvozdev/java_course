@@ -1,6 +1,7 @@
 package ru.course.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.course.model.ContactData;
 
@@ -9,22 +10,27 @@ import java.util.List;
 
 public class ContactModificationTests extends TestBase {
 
+  @BeforeMethod
+  private void ensurePrerequizites() {
+    if (! app.contact().isThereAContact()) {
+      app.contact().create(new ContactData().withName("Evgeny").withMobile("+79601830803").withSurname("Gvozdev").withEmail("egvozdev@gmail.com").withCompany("PAO Rosbank"));
+      app.goTo().HomePage();
+    }
+  }
+
   @Test(enabled = true)
   public void testContactModification() throws Exception {
-    if (! app.getContactHelper().isThereAContact()) {
-      app.getContactHelper().createContact(new ContactData().withName("Evgeny").withMobile("+79601830803").withSurname("Gvozdev").withEmail("egvozdev@gmail.com").withCompany("PAO Rosbank"));
-      app.goTo().gotoHomePage();
-    }
-    List<ContactData> before = app.getContactHelper().getContactList();
+    app.goTo().HomePage();
+    List<ContactData> before = app.contact().getContactList();
     int indexToChange = before.size() - 1;
-    app.getContactHelper().editContact(before.get(indexToChange).getId());
+    app.contact().editContact(before.get(indexToChange).getId());
     ContactData contact = new ContactData().withName("Evgeny1").withMobile("+79601830803").withSurname("Gvozdev1").withEmail("egvozdev@gmail.com").withCompany("PAO Rosbank");
-    app.getContactHelper().fillContactForm(contact, false);
+    app.contact().fillContactForm(contact, false);
 //    app.getContactHelper().changeContactForm(By.name("address"), "Sarov");
-    app.getContactHelper().submitContactModification();
-    app.goTo().gotoHomePage();
+    app.contact().submitContactModification();
+    app.goTo().HomePage();
 
-    List<ContactData> after = app.getContactHelper().getContactList();
+    List<ContactData> after = app.contact().getContactList();
     contact.withId(before.get(indexToChange).getId());
     before.remove(indexToChange);
     before.add(contact);
@@ -39,5 +45,7 @@ public class ContactModificationTests extends TestBase {
 //    }
     Assert.assertEquals(before, after);
   }
+
+
 
 }

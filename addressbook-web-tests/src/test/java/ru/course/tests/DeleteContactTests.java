@@ -1,6 +1,7 @@
 package ru.course.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.course.model.ContactData;
 
@@ -9,21 +10,25 @@ import java.util.List;
 
 public class DeleteContactTests extends TestBase{
 
+  @BeforeMethod
+  private void ensurePrerequizites() {
+    if (! app.contact().isThereAContact()) {
+      app.contact().create(new ContactData().withName("Evgeny").withMobile("+79601830803").withSurname("Gvozdev").withEmail("egvozdev@gmail.com").withCompany("PAO Rosbank"));
+      app.goTo().HomePage();
+    }
+  }
+
   @Test(enabled = true)
   public void testDeleteContact() throws Exception {
-    app.goTo().gotoHomePage();
-    if (! app.getContactHelper().isThereAContact()) {
-      app.getContactHelper().createContact(new ContactData().withName("Evgeny").withMobile("+79601830803").withSurname("Gvozdev").withEmail("egvozdev@gmail.com").withCompany("PAO Rosbank"));
-      app.goTo().gotoHomePage();
-    }
-    List<ContactData> before = app.getContactHelper().getContactList();
+    app.goTo().HomePage();
+    List<ContactData> before = app.contact().getContactList();
     int indexToRemove = before.size() - 1;
-    app.getContactHelper().selectContact(indexToRemove);
-    app.getContactHelper().deleteContact();;
+    app.contact().select(indexToRemove);
+    app.contact().delete();;
     app.goTo().confirm();;
-    app.goTo().gotoHomePage();
+    app.goTo().HomePage();
 
-    List<ContactData> after = app.getContactHelper().getContactList();
+    List<ContactData> after = app.contact().getContactList();
     before.remove(indexToRemove);
 //    before.remove(1);
     System.out.println("index  " + indexToRemove);
