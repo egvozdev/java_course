@@ -4,7 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.course.model.GroupData;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -12,22 +11,22 @@ public class DeleteGroupTest extends TestBase {
 
   @BeforeMethod
   public void ensurePreconditions() {
-    if (! app.getGroupHelper().isThereAGroup()) {
-      app.getGroupHelper().createGroup(new GroupData("test1-autocreated", "test2", "test3"));
-      app.getNavigationHelper().gotoGroupPage();
+    if (! app.group().isThereAGroup()) {
+      app.group().create(new GroupData().withName("test1-autocreated").withFooter("test2").withHeader("test3"));
+      app.goTo().groupPage();
     }
   }
 
   @Test
   public void testDeleteGroup() throws Exception {
-    app.getNavigationHelper().gotoGroupPage();
-    List<GroupData> before = app.getGroupHelper().getGroupList();
+    app.goTo().groupPage();
+    List<GroupData> before = app.group().list();
     int indexToRemove = before.size()-1;
-    app.getGroupHelper().selectGroups(indexToRemove);
-    app.getGroupHelper().deleteSelectedGroups();
+    app.group().selectGroups(indexToRemove);
+    app.group().deleteSelectedGroups();
     before.remove(indexToRemove);
-    app.getNavigationHelper().gotoGroupPage();
-    List<GroupData> after = app.getGroupHelper().getGroupList();
+    app.goTo().groupPage();
+    List<GroupData> after = app.group().list();
     Assert.assertEquals (before.size(), after.size());
 
 //    for (int i = 0; i < before.size(); i++) {

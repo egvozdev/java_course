@@ -11,17 +11,17 @@ public class DeleteContactTests extends TestBase{
 
   @Test(enabled = false)
   public void testDeleteContact() throws Exception {
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().gotoHomePage();
     if (! app.getContactHelper().isThereAContact()) {
       app.getContactHelper().createContact(new ContactData("Evgeny", "+79601830803", "Gvozdev", "egvozdev@gmail.com", "PAO Rosbank", null));
-      app.getNavigationHelper().gotoHomePage();
+      app.goTo().gotoHomePage();
     }
     List<ContactData> before = app.getContactHelper().getContactList();
     int indexToRemove = before.size() - 1;
     app.getContactHelper().selectContact(indexToRemove);
     app.getContactHelper().deleteContact();;
-    app.getNavigationHelper().confirm();;
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().confirm();;
+    app.goTo().gotoHomePage();
 
     List<ContactData> after = app.getContactHelper().getContactList();
     before.remove(indexToRemove);
