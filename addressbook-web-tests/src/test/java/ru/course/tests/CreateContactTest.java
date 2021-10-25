@@ -11,7 +11,7 @@ import java.util.List;
 
 public class CreateContactTest extends TestBase {
 
-  @Test
+  @Test(enabled = false)
   public void testCreateContact() throws Exception {
     List<ContactData> before = app.getContactHelper().getContactList();
     ContactData newContact = new ContactData("Evgeny", "+79601830803", "Gvozdev", "egvozdev@gmail.com", "PAO Rosbank", null);
