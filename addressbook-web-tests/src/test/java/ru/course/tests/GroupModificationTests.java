@@ -1,6 +1,7 @@
 package ru.course.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.course.model.GroupData;
 
@@ -10,22 +11,21 @@ import java.util.List;
 
 public class GroupModificationTests extends TestBase {
 
-  @Test
-  public void testGroupModification() {
-    app.getNavigationHelper().gotoGroupPage();
+  @BeforeMethod
+  public void ensurePreconditions() {
     if (! app.getGroupHelper().isThereAGroup()) {
       app.getGroupHelper().createGroup(new GroupData("test1-autocreated", "test2", "test3"));
       app.getNavigationHelper().gotoGroupPage();
     }
+  }
+  
+  @Test
+  public void testGroupModification() {
+    app.getNavigationHelper().gotoGroupPage();
     List<GroupData> before = app.getGroupHelper().getGroupList();
     int indexToChange = before.size()-1;
-    app.getGroupHelper().selectGroups(indexToChange);
-    app.getGroupHelper().initGroupModification();
     GroupData modifiedGroup = new GroupData("test-edited", "test22", "test33");
-    app.getGroupHelper().fillGroupForm(modifiedGroup);
-    app.getGroupHelper().submitGroupModification();
-    app.getNavigationHelper().gotoGroupPage();
-//    app.getGroupHelper().returnToGroupPage();
+    app.getGroupHelper().modifyGroup(indexToChange, modifiedGroup);
     List<GroupData> after = app.getGroupHelper().getGroupList();
     Assert.assertEquals (before.size(), after.size());
 
@@ -39,5 +39,7 @@ public class GroupModificationTests extends TestBase {
     Assert.assertEquals(before, after);
 
   }
+
+
 
 }

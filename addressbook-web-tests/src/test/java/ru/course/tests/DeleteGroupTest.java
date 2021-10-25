@@ -10,13 +10,17 @@ import java.util.List;
 
 public class DeleteGroupTest extends TestBase {
 
-  @Test
-  public void testDeleteGroup() throws Exception {
-    app.getNavigationHelper().gotoGroupPage();
+  @BeforeMethod
+  public void ensurePreconditions() {
     if (! app.getGroupHelper().isThereAGroup()) {
       app.getGroupHelper().createGroup(new GroupData("test1-autocreated", "test2", "test3"));
       app.getNavigationHelper().gotoGroupPage();
     }
+  }
+
+  @Test
+  public void testDeleteGroup() throws Exception {
+    app.getNavigationHelper().gotoGroupPage();
     List<GroupData> before = app.getGroupHelper().getGroupList();
     int indexToRemove = before.size()-1;
     app.getGroupHelper().selectGroups(indexToRemove);
