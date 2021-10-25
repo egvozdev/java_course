@@ -1,47 +1,36 @@
 package ru.course.tests;
 
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.course.model.GroupData;
+import ru.course.model.Groups;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 public class GroupCreateTest extends TestBase {
 
 
-  @Test
+  @Test(enabled = false)
   public void testGroupCreation() throws Exception {
+    GroupData gr = new GroupData().withName("test1").withHeader("test2").withFooter("test3");
+    System.out.println(gr.toString());
     app.goTo().groupPage();
-    Set<GroupData> before = app.group().all();
-//    Comparator<? super GroupData> byIdStream = (o1, o2) -> Integer.compare(o1.getId(),o2.getId());
-//    int max = before.stream().max((o1, o2) -> Integer.compare(o1.getId(),o2.getId())).get().getId();
-/*
-    Comparator<? super GroupData> byIdStream = new Comparator<GroupData>() {
-      @Override
-      public int compare(GroupData o1, GroupData o2) {
-        return Integer.compare(o1.getId(),o2.getId());
-      }
-    };
-    int max = before.stream().max(byIdStream).get().getId();
- */
-    //    int before = app.getGroupHelper().getGroupCount();
+    Groups before = app.group().all();
     GroupData newgroup = new GroupData().withName("test1").withHeader("test2").withFooter("test3");
     app.group().create(newgroup);
     app.goTo().groupPage();
-    Set<GroupData> after = app.group().all();
-    Assert.assertEquals(before.size() + 1, after.size());
-
-//    newgroup.withId(after.stream().max((o1, o2) -> Integer.compare(o1.getId(), o2.getId())).get().getId());
-    newgroup.withId(after.stream().mapToInt((g)->g.getId()).max().getAsInt());
-    before.add(newgroup);
-
-//    Comparator<? super GroupData> byId = (o1, o2) -> Integer.compare(o1.getId(), o2.getId());
-//    before.sort(byId);
-//    after.sort(byId);
-    Assert.assertEquals(before, after);
+    Groups after = app.group().all();
+    assertThat(before.size() + 1, equalTo(after.size()));
+    assertThat(after, equalTo(
+            before.withAdded(newgroup.withId(after.stream().mapToInt((g)->g.getId()).max().getAsInt()))));
   }
 
 }

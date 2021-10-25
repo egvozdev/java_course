@@ -104,7 +104,7 @@ public class ContactHelper extends HelperBase {
       String surname = el.findElement(By.cssSelector(":nth-child(2)")).getText();
       Integer id = Integer.valueOf(el.findElement(By.tagName("input")).getAttribute("value"));
 //      System.out.println("id " + id);
-      ContactData contact = new ContactData(name, surname, id);
+      ContactData contact = new ContactData().withName(name).withSurname(surname).withId(id);
       contacts.add(contact);
     }
     return contacts;

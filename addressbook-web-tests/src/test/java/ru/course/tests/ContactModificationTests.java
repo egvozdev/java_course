@@ -9,23 +9,23 @@ import java.util.List;
 
 public class ContactModificationTests extends TestBase {
 
-  @Test(enabled = false)
+  @Test(enabled = true)
   public void testContactModification() throws Exception {
     if (! app.getContactHelper().isThereAContact()) {
-      app.getContactHelper().createContact(new ContactData("Evgeny", "+79601830803", "Gvozdev", "egvozdev@gmail.com", "PAO Rosbank", null));
+      app.getContactHelper().createContact(new ContactData().withName("Evgeny").withMobile("+79601830803").withSurname("Gvozdev").withEmail("egvozdev@gmail.com").withCompany("PAO Rosbank"));
       app.goTo().gotoHomePage();
     }
     List<ContactData> before = app.getContactHelper().getContactList();
     int indexToChange = before.size() - 1;
     app.getContactHelper().editContact(before.get(indexToChange).getId());
-    ContactData contact = new ContactData("Evgeny1", "+79601830803", "Gvozdev1", "egvozdev@gmail.com", "PAO Rosbank", null);
+    ContactData contact = new ContactData().withName("Evgeny1").withMobile("+79601830803").withSurname("Gvozdev1").withEmail("egvozdev@gmail.com").withCompany("PAO Rosbank");
     app.getContactHelper().fillContactForm(contact, false);
 //    app.getContactHelper().changeContactForm(By.name("address"), "Sarov");
     app.getContactHelper().submitContactModification();
     app.goTo().gotoHomePage();
 
     List<ContactData> after = app.getContactHelper().getContactList();
-    contact.setId(before.get(indexToChange).getId());
+    contact.withId(before.get(indexToChange).getId());
     before.remove(indexToChange);
     before.add(contact);
     Assert.assertEquals (before.size(), after.size());

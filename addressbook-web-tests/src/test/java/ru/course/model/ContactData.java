@@ -11,24 +11,41 @@ public class ContactData {
   private String group;
   private Integer id;
 
-  public ContactData(String name, String mobile, String surname, String email, String company, String group) {
+  public ContactData withName(String name) {
     this.name = name;
+    return this;
+  }
+
+  public ContactData withMobile(String mobile) {
     this.mobile = mobile;
+    return this;
+  }
+
+  public ContactData withSurname(String surname) {
     this.surname = surname;
+    return this;
+  }
+
+  public ContactData withEmail(String email) {
     this.email = email;
+    return this;
+  }
+
+  public ContactData withCompany(String company) {
     this.company = company;
+    return this;
+  }
+
+  public ContactData withGroup(String group) {
     this.group = group;
+    return this;
   }
 
-  public ContactData(String name, String surname, Integer id) {
-    this.name = name;
-    this.surname = surname;
+  public ContactData withId(Integer id) {
     this.id = id;
+    return this;
   }
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
 
   public Integer getId() {
     return id;
