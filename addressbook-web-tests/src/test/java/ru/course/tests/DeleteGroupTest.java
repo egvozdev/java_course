@@ -25,7 +25,7 @@ public class DeleteGroupTest extends TestBase {
     }
   }
 
-  @Test(enabled = false)
+  @Test(enabled = true)
   public void testDeleteGroup() throws Exception {
 
     app.goTo().groupPage();

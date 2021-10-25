@@ -9,7 +9,7 @@ public class ContactData {
   private String email;
   private String company;
   private String group;
-  private Integer id;
+  private int id;
 
   public ContactData withName(String name) {
     this.name = name;
@@ -47,7 +47,7 @@ public class ContactData {
   }
 
 
-  public Integer getId() {
+  public int getId() {
     return id;
   }
 

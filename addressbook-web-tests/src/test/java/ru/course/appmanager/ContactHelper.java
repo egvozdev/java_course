@@ -5,9 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.course.model.ContactData;
+import ru.course.model.Contacts;
 import ru.course.model.GroupData;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class ContactHelper extends HelperBase {
@@ -61,7 +63,7 @@ public class ContactHelper extends HelperBase {
     type(locator, value);
   }
 
-   public void delete() {
+   public void deleteContact() {
     click(By.xpath("//input[@value='Delete']"));
    }
 
@@ -71,13 +73,47 @@ public class ContactHelper extends HelperBase {
       wd.findElements(By.name("selected[]")).get(index).click();
   }
 
+  public void selectById(int id) {
+    wd.findElement(By.cssSelector("input[value='"+id+"']")).click();
+  }
+
+  public void returnToHomePage() {
+    click(By.linkText("home"));
+  }
+
   public void create(ContactData contact) {
     //String sss = wd.findElement(By.name("search_count")).getAttribute("value");
     creatNewContact();
     fillContactForm(contact, true);
     submitContactCreation();
+    returnToHomePage();
   }
 
+  public void delete(int indexToRemove) {
+    select(indexToRemove);
+    deleteContact();
+  }
+  public void delete(ContactData contact) {
+    selectById(contact.getId());
+    deleteContact();
+    confirm();
+    returnToHomePage();
+  }
+
+  public void modify(List<ContactData> before, int indexToChange, ContactData contact) {
+    editContact(before.get(indexToChange).getId());
+    fillContactForm(contact, false);
+//    app.getContactHelper().changeContactForm(By.name("address"), "Sarov");
+    submitContactModification();
+    returnToHomePage();
+  }
+
+  public void modify(ContactData contact) {
+    editContact(contact.getId());
+    fillContactForm(contact, false);
+    submitContactModification();
+    returnToHomePage();
+  }
 
   public boolean isThereAContact() {
     return isElementPresent(By.xpath("//td/input"));
@@ -104,6 +140,21 @@ public class ContactHelper extends HelperBase {
       String surname = el.findElement(By.cssSelector(":nth-child(2)")).getText();
       Integer id = Integer.valueOf(el.findElement(By.tagName("input")).getAttribute("value"));
 //      System.out.println("id " + id);
+      ContactData contact = new ContactData().withName(name).withSurname(surname).withId(id);
+      contacts.add(contact);
+    }
+    return contacts;
+  }
+
+  public Contacts all() {
+    Contacts contacts = new Contacts();
+    List<WebElement> elements  = wd.findElements(By.name("entry"));
+
+    List<WebElement> el1;
+    for (WebElement el: elements) {
+      String name = el.findElement(By.cssSelector(":nth-child(3)")).getText();
+      String surname = el.findElement(By.cssSelector(":nth-child(2)")).getText();
+      Integer id = Integer.valueOf(el.findElement(By.tagName("input")).getAttribute("value"));
       ContactData contact = new ContactData().withName(name).withSurname(surname).withId(id);
       contacts.add(contact);
     }

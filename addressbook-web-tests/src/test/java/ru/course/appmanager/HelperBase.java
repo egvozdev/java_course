@@ -46,6 +46,9 @@ public class HelperBase {
       return false;
     }
   }
-
+  public void confirm() {
+    wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+    wd.switchTo().alert().accept();
+  }
 
 }

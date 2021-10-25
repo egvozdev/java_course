@@ -5,6 +5,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import ru.course.appmanager.ApplicationManager;
 
+import java.util.concurrent.TimeUnit;
+
 public class TestBase {
 
 
@@ -19,5 +21,6 @@ public class TestBase {
   public void tearDown() throws Exception {
     app.stop();
   }
+
 
 }

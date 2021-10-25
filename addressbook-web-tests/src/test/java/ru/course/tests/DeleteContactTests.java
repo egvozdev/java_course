@@ -1,12 +1,19 @@
 package ru.course.tests;
 
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.course.model.ContactData;
+import ru.course.model.Contacts;
+import ru.course.model.GroupData;
 
 import java.util.Comparator;
 import java.util.List;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class DeleteContactTests extends TestBase{
 
@@ -21,30 +28,16 @@ public class DeleteContactTests extends TestBase{
   @Test(enabled = true)
   public void testDeleteContact() throws Exception {
     app.goTo().HomePage();
-    List<ContactData> before = app.contact().getContactList();
-    int indexToRemove = before.size() - 1;
-    app.contact().select(indexToRemove);
-    app.contact().delete();;
-    app.goTo().confirm();;
-    app.goTo().HomePage();
-
-    List<ContactData> after = app.contact().getContactList();
-    before.remove(indexToRemove);
-//    before.remove(1);
-    System.out.println("index  " + indexToRemove);
-    System.out.println("before " + before.size());
-    System.out.println("after " + after.size());
-    Assert.assertEquals (before.size(), after.size());
-//    for (int i = 0; i < before.size(); i++) {
-//      Assert.assertEquals(before.get(i), after.get(i));
-//    }
-    Comparator<? super ContactData> byId = (o1, o2) -> Integer.compare(o1.getId(), o2.getId());
-
-    before.sort(byId);
-    after.sort(byId);
-//    System.out.println("before1 " + before.size());
-//    System.out.println("after1 " + after.size());
-    Assert.assertEquals(before, after);
+    Contacts before = app.contact().all();
+    ContactData deletedContact = before.iterator().next();
+    app.contact().delete(deletedContact);
+//    app.goTo().confirm();
+//    app.goTo().HomePage();
+    Contacts after = app.contact().all();
+    assertThat(after.size()+1, equalTo(before.size()));
+    assertThat(after, equalTo(before.without(deletedContact)));
   }
+
+
 
 }

@@ -18,7 +18,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class GroupCreateTest extends TestBase {
 
 
-  @Test(enabled = false)
+  @Test(enabled = true)
   public void testGroupCreation() throws Exception {
     GroupData gr = new GroupData().withName("test1").withHeader("test2").withFooter("test3");
     System.out.println(gr.toString());
