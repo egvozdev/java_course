@@ -17,6 +17,7 @@ public class CreateContactTest extends TestBase {
 
   @Test(enabled = true)
   public void testCreateContact() throws Exception {
+    app.goTo().HomePage();
     Contacts before = app.contact().all();
     ContactData newContact = new ContactData().withName("Evgeny").withMobile("+79601830803").withSurname("Gvozdev").withEmail("egvozdev@gmail.com").withCompany("PAO Rosbank");
     app.contact().create(newContact);

@@ -22,7 +22,7 @@ public class GroupModificationTests extends TestBase {
   @BeforeMethod(alwaysRun = true)
   public void ensurePreconditions() {
     app.goTo().groupPage();
-    if (! app.group().isThereAGroup()) {
+    if (app.group().all().size() == 0) {
       app.group().create(new GroupData().withName("test1-autocreated").withHeader("test2").withFooter("test3"));
       app.goTo().groupPage();
     }

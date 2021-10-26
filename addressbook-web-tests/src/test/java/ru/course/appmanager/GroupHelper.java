@@ -13,6 +13,8 @@ import java.util.Set;
 
 public class GroupHelper extends HelperBase {
 
+  private Groups groupCache = null;
+
   public GroupHelper(WebDriver wd) {
     super(wd);
   }
@@ -59,6 +61,8 @@ public class GroupHelper extends HelperBase {
     initGroupCreation();
     fillGroupForm(groupData);
     submitGroupCreation();
+    groupCache = null;
+    returnToGroupPage();
   }
 
   public void modify(int indexToChange, GroupData modifiedGroup) {
@@ -66,6 +70,7 @@ public class GroupHelper extends HelperBase {
     initGroupModification();
     fillGroupForm(modifiedGroup);
     submitGroupModification();
+    groupCache = null;
     returnToGroupPage();
   }
   public void modify(GroupData group) {
@@ -73,6 +78,7 @@ public class GroupHelper extends HelperBase {
     initGroupModification();
     fillGroupForm(group);
     submitGroupModification();
+    groupCache = null;
     returnToGroupPage();
   }
 
@@ -83,11 +89,13 @@ public class GroupHelper extends HelperBase {
   public void delete(int indexToRemove) {
     selectGroups(indexToRemove);
     deleteSelectedGroups();
+    groupCache = null;
     returnToGroupPage();
   }
   public void delete(GroupData group) {
     selectGroupsById(group.getId());
     deleteSelectedGroups();
+    groupCache = null;
     returnToGroupPage();
   }
 
@@ -107,14 +115,17 @@ public class GroupHelper extends HelperBase {
     return groups;
   }
   public Groups all() {
-    Groups groups = new Groups();
+    if (groupCache != null) {
+      return new Groups(groupCache);
+    }
+    groupCache = new Groups();
     List<WebElement> elements  = wd.findElements(By.cssSelector("span.group"));
     for (WebElement el: elements) {
       String name = el.getText();
       int id = Integer.parseInt((el.findElement(By.tagName("input")).getAttribute("value")));
 //      System.out.println("id " + id);
-      groups.add(new GroupData().withName(name).withId(id));
+      groupCache.add(new GroupData().withName(name).withId(id));
     }
-    return groups;
+    return new Groups(groupCache);
   }
 }
