@@ -1,5 +1,6 @@
 package ru.course.tests;
 
+import org.hamcrest.CoreMatchers;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.testng.Assert;
@@ -33,8 +34,8 @@ public class DeleteGroupTest extends TestBase {
     GroupData deletedGroup = before.iterator().next();
     app.group().delete(deletedGroup);
 //    app.goTo().groupPage();
+    assertThat(app.group().count(), equalTo(before.size()-1));
     Groups after = app.group().all();
-    assertThat(before.size()-1, equalTo(after.size()));
     assertThat(after, equalTo(
             before.without(deletedGroup)));
 

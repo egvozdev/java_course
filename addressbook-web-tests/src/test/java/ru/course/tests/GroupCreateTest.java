@@ -20,17 +20,28 @@ public class GroupCreateTest extends TestBase {
 
   @Test(enabled = true)
   public void testGroupCreation() throws Exception {
-    GroupData gr = new GroupData().withName("test1").withHeader("test2").withFooter("test3");
-    System.out.println(gr.toString());
+
     app.goTo().groupPage();
     Groups before = app.group().all();
     GroupData newgroup = new GroupData().withName("test1").withHeader("test2").withFooter("test3");
     app.group().create(newgroup);
     app.goTo().groupPage();
+    assertThat(app.group().count(), equalTo(before.size()+1));
     Groups after = app.group().all();
-    assertThat(before.size() + 1, equalTo(after.size()));
     assertThat(after, equalTo(
             before.withAdded(newgroup.withId(after.stream().mapToInt((g)->g.getId()).max().getAsInt()))));
+  }
+  @Test(enabled = true)
+  public void testBadGroupCreation() throws Exception {
+
+    app.goTo().groupPage();
+    Groups before = app.group().all();
+    GroupData newgroup = new GroupData().withName("test1'");
+    app.group().create(newgroup);
+    app.goTo().groupPage();
+    assertThat(app.group().count(), equalTo(before.size()));
+    Groups after = app.group().all();
+    assertThat(after, equalTo(before));
   }
 
 }
