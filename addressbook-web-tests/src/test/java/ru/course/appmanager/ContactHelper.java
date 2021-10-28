@@ -155,10 +155,12 @@ public class ContactHelper extends HelperBase {
       String name = el.findElement(By.cssSelector(":nth-child(3)")).getText();
       String surname = el.findElement(By.cssSelector(":nth-child(2)")).getText();
       String allPhones = el.findElement(By.cssSelector(":nth-child(6)")).getText();
-      String[] phones = allPhones.split("\n");
+      String allEmails = el.findElement(By.cssSelector(":nth-child(5)")).getText();
+      String allAdresses = el.findElement(By.cssSelector(":nth-child(4)")).getText();
+//      String[] phones = allPhones.split("\n");
       Integer id = Integer.valueOf(el.findElement(By.tagName("input")).getAttribute("value"));
       ContactData contact = new ContactData().withName(name).withSurname(surname).withId(id)
-              .withHomePhone(phones[0]).withMobile(phones[1]).withWorkPhone(phones[2]);
+              .withAllPhones(allPhones).withAllEmails(allEmails).withAllAdresses(allAdresses);
       contacts.add(contact);
     }
     return contacts;
@@ -171,8 +173,16 @@ public class ContactHelper extends HelperBase {
     String home = wd.findElement(By.name("home")).getAttribute("value");
     String mobile = wd.findElement(By.name("mobile")).getAttribute("value");
     String work = wd.findElement(By.name("work")).getAttribute("value");
+    String email = wd.findElement(By.name("email")).getAttribute("value");
+    String email2 = wd.findElement(By.name("email2")).getAttribute("value");
+    String email3 = wd.findElement(By.name("email3")).getAttribute("value");
+    String address = wd.findElement(By.name("address")).getAttribute("value");
+    String address2 = wd.findElement(By.name("address2")).getAttribute("value");
     wd.navigate().back();
-    return new ContactData().withId(contact.getId()).withFirstName(firstname).withLastName(lastname).withHomePhone(home).withMobile(mobile).withWorkPhone(work);
+    return new ContactData().withId(contact.getId()).withFirstName(firstname).withLastName(lastname)
+            .withHomePhone(home).withMobile(mobile).withWorkPhone(work)
+            .withAdress(address).withAdress2(address2)
+            .withEmail(email).withEmail2(email2).withEmail3(email3);
 
   }
 
