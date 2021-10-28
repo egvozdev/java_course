@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc0d5e73-925e-4a26-a982-522588ab9c4d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/ContactPhone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/appmanager/GroupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/appmanager/GroupHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/DeleteGroupTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/DeleteGroupTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/GroupCreateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/GroupCreateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/appmanager/ContactHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/appmanager/ContactHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/appmanager/NavigationHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/appmanager/NavigationHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/model/ContactData.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/model/ContactData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,8 +70,8 @@
     <property name="project.structure.side.proportion" value="0.4770115" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="TestNG.ru.course.tests">
-    <configuration name="ContactModificationTests" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.ContactPhone">
+    <configuration name="ContactPhone" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
@@ -79,7 +80,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.course.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.course.tests.ContactModificationTests" />
+      <option name="MAIN_CLASS_NAME" value="ru.course.tests.ContactPhone" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -87,7 +88,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DeleteContactTests" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateContactTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
@@ -96,7 +97,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.course.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.course.tests.DeleteContactTests" />
+      <option name="MAIN_CLASS_NAME" value="ru.course.tests.CreateContactTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -156,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ContactPhone" />
+        <item itemvalue="TestNG.CreateContactTest" />
         <item itemvalue="TestNG.ru.course.tests" />
         <item itemvalue="TestNG.GroupCreateTest" />
         <item itemvalue="TestNG.GroupModificationTests" />
-        <item itemvalue="TestNG.DeleteContactTests" />
-        <item itemvalue="TestNG.ContactModificationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -186,5 +187,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/appmanager/ContactHelper.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

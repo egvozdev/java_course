@@ -9,20 +9,54 @@ public class ContactData {
   private String email;
   private String company;
   private String group;
+  private String home;
+  private String work;
   private int id;
 
-  public ContactData withName(String name) {
-    this.name = name;
-    return this;
-  }
 
   public ContactData withMobile(String mobile) {
     this.mobile = mobile;
     return this;
   }
 
+  public String getHome() {
+    return home;
+  }
+
+  public ContactData withHomePhone(String home) {
+    this.home = home;
+    return this;
+  }
+
+    public String getWork() {
+    return work;
+  }
+
+  public ContactData withWorkPhone(String work) {
+    this.work = work;
+    return this;
+  }
+
+
+  public ContactData withName(String name) {
+    this.name = name;
+    return this;
+  }
+
+
   public ContactData withSurname(String surname) {
     this.surname = surname;
+    return this;
+  }
+
+
+  public ContactData withLastName(String surname) {
+    this.surname = surname;
+    return this;
+  }
+
+  public ContactData withFirstName(String name) {
+    this.name = name;
     return this;
   }
 
