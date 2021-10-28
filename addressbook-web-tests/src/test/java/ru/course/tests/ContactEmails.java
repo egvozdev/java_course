@@ -26,9 +26,8 @@ public class ContactEmails extends TestBase{
     ContactData contact = app.contact().all().iterator().next();
     ContactData contactInfoFromEdit = app.contact().infoFromEditForm(contact);
 
-    String merged = mergeEmails(contactInfoFromEdit);
-    String merged1 = cleaned(mergeEmails(contactInfoFromEdit));
-    String merged2 = cleaned(contact.getAllEmails());
+//    String merged = mergeEmails(contactInfoFromEdit);
+//    String merged2 = cleaned(contact.getAllEmails());
 
     assertThat(contact.getAllEmails(), equalTo(mergeEmails(contactInfoFromEdit)));
 
