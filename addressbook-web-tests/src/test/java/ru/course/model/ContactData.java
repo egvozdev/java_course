@@ -1,25 +1,45 @@
 package ru.course.model;
 
+import com.google.gson.annotations.Expose;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
+
 import java.io.File;
 import java.util.Objects;
 
 public class ContactData {
+  @Expose
   private String name;
+  @Expose
   private String mobile;
+  @Expose
   private String surname;
+  @Expose
   private String email;
+  @XStreamOmitField
   private String email3;
+  @XStreamOmitField
   private String email2;
+  @Expose
   private String adress;
+  @XStreamOmitField
   private String adress2;
+  @XStreamOmitField
   private String company;
+  @XStreamOmitField
   private String group;
+  @XStreamOmitField
   private String home;
+  @XStreamOmitField
   private String work;
+  @XStreamOmitField
   private String allPhones;
+  @XStreamOmitField
   private String allEmails;
+  @XStreamOmitField
   private String allAdresses;
+  @XStreamOmitField
   private int id;
+  @XStreamOmitField
   private File photo;
 
 

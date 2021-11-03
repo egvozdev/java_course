@@ -1,0 +1,23 @@
+<list>
+  <ru.course.model.ContactData>
+    <name>Evgeny 0</name>
+    <mobile>+75550</mobile>
+    <surname>Gvozdev 0</surname>
+    <email>Evgeny@Gvozdevs@gmail.com</email>
+    <adress>Sarov 0</adress>
+  </ru.course.model.ContactData>
+  <ru.course.model.ContactData>
+    <name>Evgeny 1</name>
+    <mobile>+75551</mobile>
+    <surname>Gvozdev 1</surname>
+    <email>Evgeny@Gvozdevs@gmail.com</email>
+    <adress>Sarov 1</adress>
+  </ru.course.model.ContactData>
+  <ru.course.model.ContactData>
+    <name>Evgeny 2</name>
+    <mobile>+75552</mobile>
+    <surname>Gvozdev 2</surname>
+    <email>Evgeny@Gvozdevs@gmail.com</email>
+    <adress>Sarov 2</adress>
+  </ru.course.model.ContactData>
+</list>

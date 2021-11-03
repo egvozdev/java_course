@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Evgeny 0",
+    "mobile": "+75550",
+    "surname": "Gvozdev 0",
+    "email": "Evgeny@Gvozdevs@gmail.com",
+    "adress": "Sarov 0"
+  },
+  {
+    "name": "Evgeny 1",
+    "mobile": "+75551",
+    "surname": "Gvozdev 1",
+    "email": "Evgeny@Gvozdevs@gmail.com",
+    "adress": "Sarov 1"
+  },
+  {
+    "name": "Evgeny 2",
+    "mobile": "+75552",
+    "surname": "Gvozdev 2",
+    "email": "Evgeny@Gvozdevs@gmail.com",
+    "adress": "Sarov 2"
+  }
+]
