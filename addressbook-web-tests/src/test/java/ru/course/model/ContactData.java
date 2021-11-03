@@ -1,5 +1,6 @@
 package ru.course.model;
 
+import java.io.File;
 import java.util.Objects;
 
 public class ContactData {
@@ -19,6 +20,7 @@ public class ContactData {
   private String allEmails;
   private String allAdresses;
   private int id;
+  private File photo;
 
 
 
@@ -210,4 +212,11 @@ public class ContactData {
   }
 
   public String getGroup() { return group; }
+
+  public File getPhoto() { return photo; }
+
+  public ContactData withPhoto(File photo) {
+    this.photo = photo;
+    return this;
+  }
 }
