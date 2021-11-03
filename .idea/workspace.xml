@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc0d5e73-925e-4a26-a982-522588ab9c4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/generators/ContactDataGenerators.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/generators/GroupDataGenerators.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/generators/GroupDataGenerators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/model/ContactData.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/model/ContactData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/model/GroupData.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/model/GroupData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/CreateContactTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/CreateContactTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/GroupCreateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/GroupCreateTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +76,7 @@
     <property name="project.structure.side.proportion" value="0.4770115" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="Application.ContactDataGenerators">
+  <component name="RunManager" selected="TestNG.CreateContactTest.testCreateContact">
     <configuration name="ContactDataGenerators" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.course.generators.ContactDataGenerators" />
       <module name="addressbook-web-tests.test" />
@@ -111,7 +107,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateContactTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateContactTest.testCreateContact" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
@@ -121,7 +117,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="ru.course.tests" />
       <option name="MAIN_CLASS_NAME" value="ru.course.tests.CreateContactTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="METHOD_NAME" value="testCreateContact" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -166,17 +163,17 @@
     <list>
       <item itemvalue="Application.GroupDataGenerators" />
       <item itemvalue="Application.ContactDataGenerators" />
-      <item itemvalue="TestNG.CreateContactTest" />
       <item itemvalue="TestNG.GroupCreateTest.testGroupCreation" />
       <item itemvalue="TestNG.GroupCreateTest" />
+      <item itemvalue="TestNG.CreateContactTest.testCreateContact" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.CreateContactTest.testCreateContact" />
         <item itemvalue="Application.ContactDataGenerators" />
         <item itemvalue="TestNG.GroupCreateTest.testGroupCreation" />
         <item itemvalue="Application.GroupDataGenerators" />
         <item itemvalue="TestNG.GroupCreateTest" />
-        <item itemvalue="TestNG.CreateContactTest" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +210,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/CreateContactTest.java</url>
-          <line>25</line>
+          <line>46</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

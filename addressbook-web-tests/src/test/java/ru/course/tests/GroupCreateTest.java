@@ -69,7 +69,7 @@ public class GroupCreateTest extends TestBase {
     return groups.stream().map((g)->new Object[] {g}).collect(Collectors.toList()).iterator();
   }
 
-  @Test(dataProvider = "validGroupsFromXml")
+  @Test(dataProvider = "validGroupsFromJson")
   public void testGroupCreation(GroupData newgroup) throws Exception {
 
     app.goTo().groupPage();
