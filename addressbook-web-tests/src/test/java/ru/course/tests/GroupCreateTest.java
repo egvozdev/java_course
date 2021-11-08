@@ -5,6 +5,9 @@ import com.thoughtworks.xstream.XStream;
 import org.hamcrest.CoreMatchers;
 import org.hamcrest.MatcherAssert;
 import org.openqa.selenium.json.TypeToken;
+import org.slf4j.ILoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -20,6 +23,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class GroupCreateTest extends TestBase {
+
 
   @DataProvider
   public Iterator<Object[]> validGroupsCsv() throws IOException {
@@ -71,7 +75,6 @@ public class GroupCreateTest extends TestBase {
 
   @Test(dataProvider = "validGroupsFromJson")
   public void testGroupCreation(GroupData newgroup) throws Exception {
-
     app.goTo().groupPage();
     Groups before = app.group().all();
 //    GroupData newgroup = new GroupData().withName("test1").withHeader("test2").withFooter("test3");
