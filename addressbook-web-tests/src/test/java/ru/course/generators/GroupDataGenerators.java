@@ -58,19 +58,22 @@ public class GroupDataGenerators  {
 //    xstream.alias("group", GroupData.class);
 //    xstream.processAnnotations(GroupData.class);
     String json = gson.toJson(groups);
-    Writer writer = new FileWriter(file);
-    writer.write(json);
-    writer.close();
+    try (Writer writer = new FileWriter(file)) {
+      writer.write(json);
+    }
+
   }
 
   private void saveAsXml(List<GroupData> groups, File file) throws IOException {
-    Writer writer = new FileWriter(file);
+
     XStream xstream = new XStream();
 //    xstream.alias("group", GroupData.class);
     xstream.processAnnotations(GroupData.class);
     String xml = xstream.toXML(groups);
-    writer.write(xml);
-    writer.close();
+    try (Writer writer = new FileWriter(file);) {
+      writer.write(xml);
+    }
+
   }
 
   private void saveAsCsv(List<GroupData> groups, File file) throws IOException {
