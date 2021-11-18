@@ -43,10 +43,12 @@ public class CreateContactTest extends TestBase {
   public void testCreateContact(ContactData newContact) throws Exception {
 //    File photo = new File("src/test/java/ru/course/resource/evg-Visa.jpg");
     app.goTo().HomePage();
-    Contacts before = app.contact().all();
+    Contacts before = app.db().contacts();
+//    Contacts before = app.contact().all();
 //    ContactData newContact = new ContactData().withName("Evgeny").withMobile("+79601830803").withSurname("Gvozdev").withEmail("egvozdev@gmail.com").withCompany("PAO Rosbank").withPhoto(photo);
     app.contact().create(newContact);
-    Contacts after = app.contact().all();
+    Contacts after = app.db().contacts();
+//    Contacts after = app.contact().all();
     assertThat(after.size()-1, equalTo(before.size()));
     assertThat(after, equalTo(
             before.withAdded(newContact.withId(after.stream().mapToInt((c)->c.getId()).max().getAsInt()))));

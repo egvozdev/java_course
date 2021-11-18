@@ -15,16 +15,20 @@ public class ContactData {
   @Expose
   @Column(name="firstname")
   private String name;
+//  private String name = "";
   @Expose
   @Column(name="mobile")
   @Type(type="text")
   private String mobile;
+//  private String mobile = "";
   @Expose
   @Column(name="lastname")
   private String surname;
   @Expose
-  @Transient
+  @Column(name="email")
+  @Type(type="text")
   private String email;
+//  private String email = "";
   @XStreamOmitField
   @Transient
   private String email3;
@@ -32,14 +36,17 @@ public class ContactData {
   @Transient
   private String email2;
   @Expose
-  @Transient
+  @Column(name="address")
+  @Type(type="text")
   private String adress;
+//  private String adress = "";
   @XStreamOmitField
   @Transient
   private String adress2;
   @XStreamOmitField
-  @Transient
+  @Column(name="company")
   private String company;
+//  private String company = "";
   @XStreamOmitField
   @Transient
   private String group;
@@ -47,10 +54,12 @@ public class ContactData {
   @Column(name="home")
   @Type(type="text")
   private String home;
+//  private String home = "";
   @XStreamOmitField
   @Column(name="work")
   @Type(type="text")
   private String work;
+//  private String work = "";
   @XStreamOmitField
   @Transient
   private String allPhones;
@@ -190,6 +199,38 @@ public class ContactData {
     return this;
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    ContactData that = (ContactData) o;
+
+    if (id != that.id) return false;
+    if (name != null ? !name.equals(that.name) : that.name != null) return false;
+    if (mobile != null ? !mobile.equals(that.mobile) : that.mobile != null) return false;
+    if (surname != null ? !surname.equals(that.surname) : that.surname != null) return false;
+    if (email != null ? !email.equals(that.email) : that.email != null) return false;
+    if (adress != null ? !adress.equals(that.adress) : that.adress != null) return false;
+    if (company != null ? !company.equals(that.company) : that.company != null) return false;
+    if (home != null ? !home.equals(that.home) : that.home != null) return false;
+    return work != null ? work.equals(that.work) : that.work == null;
+  }
+
+  @Override
+  public int hashCode() {
+    int result = name != null ? name.hashCode() : 0;
+    result = 31 * result + (mobile != null ? mobile.hashCode() : 0);
+    result = 31 * result + (surname != null ? surname.hashCode() : 0);
+    result = 31 * result + (email != null ? email.hashCode() : 0);
+    result = 31 * result + (adress != null ? adress.hashCode() : 0);
+    result = 31 * result + (company != null ? company.hashCode() : 0);
+    result = 31 * result + (home != null ? home.hashCode() : 0);
+    result = 31 * result + (work != null ? work.hashCode() : 0);
+    result = 31 * result + id;
+    return result;
+  }
+
   public ContactData withCompany(String company) {
     this.company = company;
     return this;
@@ -211,31 +252,18 @@ public class ContactData {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass())  {
-//      System.out.println("ret obj\n");
-      return false; }
-    ContactData that = (ContactData) o;
-//    System.out.println("name " + Objects.equals(name, that.name) + "bef " + name + "aft " + that.name + "id " + id);
-    return Objects.equals(name, that.name) && Objects.equals(surname, that.surname) && Objects.equals(id, that.id);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(name, surname, id);
-  }
-
-  @Override
   public String toString() {
     return "ContactData{" +
             "name='" + name + '\'' +
             ", mobile='" + mobile + '\'' +
             ", surname='" + surname + '\'' +
             ", email='" + email + '\'' +
+            ", adress='" + adress + '\'' +
             ", company='" + company + '\'' +
             ", group='" + group + '\'' +
-            ", id='" + id + '\'' +
+            ", home='" + home + '\'' +
+            ", work='" + work + '\'' +
+            ", id=" + id +
             '}';
   }
 
@@ -261,10 +289,38 @@ public class ContactData {
 
   public String getGroup() { return group; }
 
-  public File getPhoto() { return new File(photo); }
+  public File getPhoto() {
+    if (photo != null) return new File(photo);
+    return null;}
 
   public ContactData withPhoto(File photo) {
     this.photo = photo.getPath();
     return this;
   }
+
+  public ContactData (ContactData contact)
+  {
+    this.id = contact.id;
+    this.name = contact.name;
+    this.surname = contact.surname;
+    this.mobile = contact.mobile;
+    this.work = contact.work;
+    this.company = contact.company;
+    this.adress = contact.adress;
+    this.adress2 = contact.adress2;
+    this.allAdresses = contact.allAdresses;
+    this.email2 = contact.email2;
+    this.email3 = contact.email3;
+    this.home = contact.home;
+    this.group = contact.group;
+    this.allEmails = contact.allEmails;
+    this.allPhones = contact.allPhones;
+//    this.photo = contact.photo;
+
+  }
+  public ContactData ()
+  {
+
+  }
+
 }

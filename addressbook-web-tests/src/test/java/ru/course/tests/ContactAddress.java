@@ -14,10 +14,11 @@ public class ContactAddress extends TestBase{
 
   @BeforeMethod
   private void ensurePrerequizites() {
-    if (! app.contact().isThereAContact()) {
+    if (app.db().contacts().size() == 0) {
       app.contact().create(new ContactData().withName("Evgeny").withMobile("+79601830803").withSurname("Gvozdev").withEmail("egvozdev@gmail.com").withCompany("PAO Rosbank"));
       app.goTo().HomePage();
     }
+
   }
 
   @Test(enabled = true)
