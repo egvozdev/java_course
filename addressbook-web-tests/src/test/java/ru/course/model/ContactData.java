@@ -2,45 +2,73 @@ package ru.course.model;
 
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import jdk.internal.instrumentation.TypeMapping;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.io.File;
 import java.util.Objects;
 
+@Entity
+@Table(name="addressbook")
 public class ContactData {
   @Expose
+  @Column(name="firstname")
   private String name;
   @Expose
+  @Column(name="mobile")
+  @Type(type="text")
   private String mobile;
   @Expose
+  @Column(name="lastname")
   private String surname;
   @Expose
+  @Transient
   private String email;
   @XStreamOmitField
+  @Transient
   private String email3;
   @XStreamOmitField
+  @Transient
   private String email2;
   @Expose
+  @Transient
   private String adress;
   @XStreamOmitField
+  @Transient
   private String adress2;
   @XStreamOmitField
+  @Transient
   private String company;
   @XStreamOmitField
+  @Transient
   private String group;
   @XStreamOmitField
+  @Column(name="home")
+  @Type(type="text")
   private String home;
   @XStreamOmitField
+  @Column(name="work")
+  @Type(type="text")
   private String work;
   @XStreamOmitField
+  @Transient
   private String allPhones;
   @XStreamOmitField
+  @Transient
   private String allEmails;
   @XStreamOmitField
+  @Transient
   private String allAdresses;
   @XStreamOmitField
+  @Id
+  @Column(name="id")
   private int id;
   @XStreamOmitField
-  private File photo;
+
+  @Column(name="photo")
+  @Type(type="text")
+  private String photo;
 
 
 
@@ -233,10 +261,10 @@ public class ContactData {
 
   public String getGroup() { return group; }
 
-  public File getPhoto() { return photo; }
+  public File getPhoto() { return new File(photo); }
 
   public ContactData withPhoto(File photo) {
-    this.photo = photo;
+    this.photo = photo.getPath();
     return this;
   }
 }

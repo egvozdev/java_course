@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc0d5e73-925e-4a26-a982-522588ab9c4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/DbConnectionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/HbConnectionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addressbook-web-tests/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/model/ContactData.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/model/ContactData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/model/GroupData.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/model/GroupData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/GroupCreateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/GroupCreateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/resources/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +51,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -76,8 +82,13 @@
     <property name="project.structure.side.proportion" value="0.4770115" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="TestNG.DbConnectionTest">
-    <configuration name="ContactEmails" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.course.model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.HbConnectionTest">
+    <configuration name="CreateContactTest.testCreateContact" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
@@ -85,37 +96,10 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.course.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.course.tests.ContactEmails" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreateContactTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-tests.test" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.course.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="ru.course.tests" />
       <option name="MAIN_CLASS_NAME" value="ru.course.tests.CreateContactTest" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea -Dtarget=local" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="F:\java\aaa\java_course\addressbook-web-tests\src\test\resources\local.properties" />
+      <option name="METHOD_NAME" value="testCreateContact" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -157,7 +141,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GroupModificationTests" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="HbConnectionTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
@@ -166,7 +150,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.course.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.course.tests.GroupModificationTests" />
+      <option name="MAIN_CLASS_NAME" value="ru.course.tests.HbConnectionTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -174,20 +158,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ru.course.tests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.course.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.course.tests" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="TestNG.GroupModificationTests" />
-      <item itemvalue="TestNG.CreateContactTest" />
-      <item itemvalue="TestNG.ContactEmails" />
       <item itemvalue="TestNG.GroupCreateTest.testGroupCreation" />
       <item itemvalue="TestNG.DbConnectionTest" />
+      <item itemvalue="TestNG.CreateContactTest.testCreateContact" />
+      <item itemvalue="TestNG.ru.course.tests" />
+      <item itemvalue="TestNG.HbConnectionTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.HbConnectionTest" />
         <item itemvalue="TestNG.DbConnectionTest" />
+        <item itemvalue="TestNG.ru.course.tests" />
         <item itemvalue="TestNG.GroupCreateTest.testGroupCreation" />
-        <item itemvalue="TestNG.ContactEmails" />
-        <item itemvalue="TestNG.CreateContactTest" />
-        <item itemvalue="TestNG.GroupModificationTests" />
+        <item itemvalue="TestNG.CreateContactTest.testCreateContact" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +229,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/GroupCreateTest.java</url>
-          <line>54</line>
+          <line>55</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
