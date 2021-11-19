@@ -7,7 +7,9 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.File;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name="addressbook")
@@ -47,9 +49,14 @@ public class ContactData {
   @Column(name="company")
   private String company;
 //  private String company = "";
-  @XStreamOmitField
-  @Transient
-  private String group;
+
+  //  @XStreamOmitField
+//  @Transient
+//  private String group;
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(name="address_in_groups",
+          joinColumns = @JoinColumn(name="id"), inverseJoinColumns = @JoinColumn(name="group_id"))
+  private Set<GroupData> groups = new HashSet<GroupData>();
   @XStreamOmitField
   @Column(name="home")
   @Type(type="text")
@@ -236,12 +243,7 @@ public class ContactData {
     return this;
   }
 
-  public ContactData withGroup(String group) {
-    this.group = group;
-    return this;
-  }
-
-  public ContactData withId(Integer id) {
+   public ContactData withId(Integer id) {
     this.id = id;
     return this;
   }
@@ -260,7 +262,6 @@ public class ContactData {
             ", email='" + email + '\'' +
             ", adress='" + adress + '\'' +
             ", company='" + company + '\'' +
-            ", group='" + group + '\'' +
             ", home='" + home + '\'' +
             ", work='" + work + '\'' +
             ", id=" + id +
@@ -287,7 +288,6 @@ public class ContactData {
     return company;
   }
 
-  public String getGroup() { return group; }
 
   public File getPhoto() {
     if (photo != null) return new File(photo);
@@ -296,6 +296,10 @@ public class ContactData {
   public ContactData withPhoto(File photo) {
     this.photo = photo.getPath();
     return this;
+  }
+
+  public Groups getGroups() {
+    return new Groups(groups);
   }
 
   public ContactData (ContactData contact)
@@ -312,7 +316,6 @@ public class ContactData {
     this.email2 = contact.email2;
     this.email3 = contact.email3;
     this.home = contact.home;
-    this.group = contact.group;
     this.allEmails = contact.allEmails;
     this.allPhones = contact.allPhones;
 //    this.photo = contact.photo;
@@ -323,4 +326,8 @@ public class ContactData {
 
   }
 
+  public ContactData inGroup(GroupData group) {
+  groups.add(group);
+  return this;
+  }
 }

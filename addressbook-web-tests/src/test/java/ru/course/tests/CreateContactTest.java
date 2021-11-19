@@ -5,11 +5,13 @@ import org.hamcrest.CoreMatchers;
 import org.hamcrest.MatcherAssert;
 import org.openqa.selenium.json.TypeToken;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.course.model.ContactData;
 import ru.course.model.Contacts;
 import ru.course.model.GroupData;
+import ru.course.model.Groups;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -24,6 +26,13 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class CreateContactTest extends TestBase {
+
+  @BeforeMethod(alwaysRun = true)
+  public void ensurePreconditions() {
+    if (app.db().groups().size() == 0) {
+      app.group().create(new GroupData().withName("test1-autocreated").withHeader("test2").withFooter("test3"));
+    };
+  }
 
   @DataProvider
   public Iterator<Object[]> validContactsFromJson() throws IOException {
@@ -41,11 +50,13 @@ public class CreateContactTest extends TestBase {
 
   @Test(dataProvider = "validContactsFromJson")
   public void testCreateContact(ContactData newContact) throws Exception {
-//    File photo = new File("src/test/java/ru/course/resource/evg-Visa.jpg");
+    Groups groups = app.db().groups();
+    File photo = new File("src/test/java/ru/course/resource/evg-Visa.jpg");
     app.goTo().HomePage();
     Contacts before = app.db().contacts();
 //    Contacts before = app.contact().all();
 //    ContactData newContact = new ContactData().withName("Evgeny").withMobile("+79601830803").withSurname("Gvozdev").withEmail("egvozdev@gmail.com").withCompany("PAO Rosbank").withPhoto(photo);
+    newContact.inGroup(groups.iterator().next());
     app.contact().create(newContact);
     Contacts after = app.db().contacts();
 //    Contacts after = app.contact().all();
