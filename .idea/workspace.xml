@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc0d5e73-925e-4a26-a982-522588ab9c4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/tests/LoginTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/RegistrationHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/tests/RegistrationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/ApplicationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/tests/SimpleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/tests/SimpleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis/src/test/resources/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/resources/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +89,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.course.mantisbt.appmanager" />
       <recent name="ru.course.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -106,34 +105,6 @@
     </key>
   </component>
   <component name="RunManager" selected="TestNG.LoginTest">
-    <configuration name="GroupModificationTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-tests.test" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.course.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="ru.course.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.course.tests.GroupModificationTests" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea -DverifyUI=true" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="HbConnectionTest.hbConnectionTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
@@ -162,6 +133,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="ru.course.mantisbt.tests" />
       <option name="MAIN_CLASS_NAME" value="ru.course.mantisbt.tests.LoginTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegistrationTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="mantis.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.course.mantisbt.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.course.mantisbt.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.course.mantisbt.tests.RegistrationTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -204,18 +192,18 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.ru.course.tests" />
-      <item itemvalue="TestNG.GroupModificationTests" />
       <item itemvalue="TestNG.HbConnectionTest.hbConnectionTest" />
       <item itemvalue="TestNG.SimpleTest" />
       <item itemvalue="TestNG.LoginTest" />
+      <item itemvalue="TestNG.RegistrationTests" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.LoginTest" />
+        <item itemvalue="TestNG.RegistrationTests" />
         <item itemvalue="TestNG.SimpleTest" />
         <item itemvalue="TestNG.ru.course.tests" />
         <item itemvalue="TestNG.HbConnectionTest.hbConnectionTest" />
-        <item itemvalue="TestNG.GroupModificationTests" />
       </list>
     </recent_temporary>
   </component>
