@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc0d5e73-925e-4a26-a982-522588ab9c4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/RegistrationHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/tests/RegistrationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/ApplicationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/RegistrationHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/RegistrationHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/tests/RegistrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/tests/RegistrationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/tests/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/tests/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis/src/test/resources/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/resources/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +107,7 @@
       <recent name="F:\java\aaa\java_course\mantistests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.LoginTest">
+  <component name="RunManager" selected="TestNG.RegistrationTests">
     <configuration name="HbConnectionTest.hbConnectionTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
@@ -199,8 +202,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.LoginTest" />
         <item itemvalue="TestNG.RegistrationTests" />
+        <item itemvalue="TestNG.LoginTest" />
         <item itemvalue="TestNG.SimpleTest" />
         <item itemvalue="TestNG.ru.course.tests" />
         <item itemvalue="TestNG.HbConnectionTest.hbConnectionTest" />
@@ -267,6 +270,11 @@
           <url>file://$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/tests/SimpleTest.java</url>
           <line>20</line>
           <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/RegistrationHelper.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
