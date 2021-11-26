@@ -35,7 +35,7 @@ public class SoapHelper {
             .map((p) -> new Project().withId(p.getId().intValue()).withName(p.getName())).collect(Collectors.toSet());
   }
 
-  public MantisConnectPortType getMantisConnect() throws ServiceException, MalformedURLException {
+  public MantisConnectPortType getMantisConnect() throws MalformedURLException, ServiceException {
     return new MantisConnectLocator().getMantisConnectPort(new URL(soapUrl));
   }
 
