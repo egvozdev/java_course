@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc0d5e73-925e-4a26-a982-522588ab9c4d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/tests/SoapTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mantis/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/ApplicationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/RegistrationHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/RegistrationHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/tests/RegistrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/tests/RegistrationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/tests/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/tests/TestBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mantis/src/test/resources/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/resources/local.properties" afterDir="false" />
     </list>
@@ -29,6 +29,9 @@
       <ProjectState />
     </projectState>
     <projectState path="$PROJECT_DIR$/sandbox">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/soap-sample">
       <ProjectState />
     </projectState>
   </component>
@@ -84,7 +87,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mantis/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/soap-sample/build.gradle" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4770115" />
@@ -107,25 +110,7 @@
       <recent name="F:\java\aaa\java_course\mantistests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.RegistrationTests">
-    <configuration name="HbConnectionTest.hbConnectionTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.course.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.course.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.course.tests.HbConnectionTest" />
-      <option name="METHOD_NAME" value="hbConnectionTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.SoapTests">
     <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="mantis.test" />
       <extension name="coverage">
@@ -160,7 +145,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SoapTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="mantis.test" />
       <extension name="coverage">
         <pattern>
@@ -169,7 +154,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.course.mantisbt.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.course.mantisbt.tests.SimpleTest" />
+      <option name="MAIN_CLASS_NAME" value="ru.course.mantisbt.tests.SoapTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -195,18 +180,16 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.ru.course.tests" />
-      <item itemvalue="TestNG.HbConnectionTest.hbConnectionTest" />
-      <item itemvalue="TestNG.SimpleTest" />
       <item itemvalue="TestNG.LoginTest" />
       <item itemvalue="TestNG.RegistrationTests" />
+      <item itemvalue="TestNG.SoapTests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.SoapTests" />
         <item itemvalue="TestNG.RegistrationTests" />
         <item itemvalue="TestNG.LoginTest" />
-        <item itemvalue="TestNG.SimpleTest" />
         <item itemvalue="TestNG.ru.course.tests" />
-        <item itemvalue="TestNG.HbConnectionTest.hbConnectionTest" />
       </list>
     </recent_temporary>
   </component>

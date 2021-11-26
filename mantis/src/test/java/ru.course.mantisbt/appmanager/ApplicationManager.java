@@ -23,8 +23,9 @@ public class ApplicationManager {
   private RegistrationHelper registrationHelper;
   private FtpHelper ftp;
   private MailHelper mailHelper;
+  private SoapHelper soapHelper;
 
-  public ApplicationManager(String browser)  {
+  public ApplicationManager(String browser) {
 
     this.browser = browser;
     properties = new Properties();
@@ -35,6 +36,7 @@ public class ApplicationManager {
     properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
 
   }
+
   public void stop() {
     if (wd != null) {
       wd.quit();
@@ -45,7 +47,7 @@ public class ApplicationManager {
     return new HttpSession(this);
   }
 
-  public  String getProperty(String key) {
+  public String getProperty(String key) {
     return properties.getProperty(key);
   }
 
@@ -56,12 +58,13 @@ public class ApplicationManager {
     return registrationHelper;
   }
 
-  public FtpHelper ftp(){
+  public FtpHelper ftp() {
     if (ftp == null) {
       ftp = new FtpHelper(this);
     }
     return ftp;
   }
+
   public WebDriver getDriver() {
     if (wd == null) {
       if (browser.equals(BrowserType.FIREFOX)) {
@@ -78,10 +81,18 @@ public class ApplicationManager {
     }
     return wd;
   }
+
   public MailHelper mail() {
     if (mailHelper == null) {
       mailHelper = new MailHelper(this);
     }
     return mailHelper;
+  }
+
+  public SoapHelper soap() {
+    if (soapHelper == null) {
+      soapHelper = new SoapHelper(this);
+    }
+    return soapHelper;
   }
 }
