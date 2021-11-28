@@ -24,7 +24,6 @@ public class DistTest {
 
     Assert.assertEquals(p1.distance(p3), Math.sqrt(2));
     Assert.assertEquals(p1.distance(p4), Math.sqrt(8));
-//    Assert.assertEquals(p4.distance(p1), Math.sqrt(8));
-    Assert.assertEquals(p4.distance(p1), Math.sqrt(18));
+    Assert.assertEquals(p4.distance(p1), Math.sqrt(8));
   }
 }
