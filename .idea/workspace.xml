@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc0d5e73-925e-4a26-a982-522588ab9c4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/DbHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/tests/ChangePasswordTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mantis/src/test/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest-sample/src/test/java/ru/course/RestTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/ApplicationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/RegistrationHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/RegistrationHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/SoapHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/SoapHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +25,9 @@
     <projectState path="$PROJECT_DIR$/mantistests">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/rest-sample">
+      <ProjectState />
+    </projectState>
     <projectState path="$PROJECT_DIR$/sandbox">
       <ProjectState />
     </projectState>
@@ -43,6 +42,9 @@
           <activation />
         </task>
         <task path="$PROJECT_DIR$/mantis">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/rest-sample">
           <activation />
         </task>
         <projects_view>
@@ -88,7 +90,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mantis/src/test/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/rest-sample/build.gradle" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4770115" />
@@ -114,17 +116,17 @@
       <recent name="ru.course.mantisbt.appmanager" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="ChangePasswordTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="mantis.test" />
+  <component name="RunManager" selected="TestNG.HbConnectionTest">
+    <configuration name="DeleteContactTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.course.mantisbt.tests.*" />
+          <option name="PATTERN" value="ru.course.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.course.mantisbt.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.course.mantisbt.tests.ChangePasswordTest" />
+      <option name="PACKAGE_NAME" value="ru.course.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.course.tests.DeleteContactTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -132,9 +134,88 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DeleteGroupTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.course.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.course.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.course.tests.DeleteGroupTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GroupCreateTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.course.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.course.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.course.tests.GroupCreateTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GroupModificationTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.course.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.course.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.course.tests.GroupModificationTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HbConnectionTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.course.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.course.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.course.tests.HbConnectionTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="TestNG.DeleteContactTests" />
+      <item itemvalue="TestNG.DeleteGroupTest" />
+      <item itemvalue="TestNG.GroupCreateTest" />
+      <item itemvalue="TestNG.GroupModificationTests" />
+      <item itemvalue="TestNG.HbConnectionTest" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ChangePasswordTest" />
+        <item itemvalue="TestNG.HbConnectionTest" />
+        <item itemvalue="TestNG.GroupModificationTests" />
+        <item itemvalue="TestNG.GroupCreateTest" />
+        <item itemvalue="TestNG.DeleteGroupTest" />
+        <item itemvalue="TestNG.DeleteContactTests" />
       </list>
     </recent_temporary>
   </component>
@@ -164,11 +245,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/ContactAddress.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/GroupCreateTest.java</url>
           <line>55</line>
@@ -209,8 +285,23 @@
           <line>29</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rest-sample/src/test/java/ru/course/RestTests.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rest-sample/src/test/java/ru/course/TestBase.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="TestNG">
+        <watch expression="newIssues.toArray()[399]" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sandbox$CreateContactTest.ic" NAME="CreateContactTest Coverage Results" MODIFIED="1635856937844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
