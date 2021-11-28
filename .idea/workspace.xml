@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dc0d5e73-925e-4a26-a982-522588ab9c4d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/resources/testng-groups.xml" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/resources/testng-groups.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +114,7 @@
       <recent name="ru.course.mantisbt.appmanager" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GroupCreateTest">
+  <component name="RunManager" selected="TestNG.DeleteGroupTest">
     <configuration name="ChangePasswordTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="mantis.test" />
       <extension name="coverage">
@@ -209,11 +209,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.DeleteGroupTest" />
         <item itemvalue="TestNG.GroupCreateTest" />
         <item itemvalue="TestNG.ChangePasswordTest" />
         <item itemvalue="TestNG.HbConnectionTest" />
         <item itemvalue="TestNG.GroupModificationTests" />
-        <item itemvalue="TestNG.DeleteGroupTest" />
       </list>
     </recent_temporary>
   </component>

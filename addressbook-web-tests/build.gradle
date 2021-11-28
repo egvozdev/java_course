@@ -15,6 +15,9 @@ dependencies {
     implementation 'org.hibernate:hibernate-core:5.6.1.Final'
 }
 
+lintOptions {
+    disable 'Deprecation'
+}
 task testGroups(type: Test) {
     useTestNG{
         suites 'src/test/resources/testng-groups.xml'
