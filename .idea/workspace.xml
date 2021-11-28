@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc0d5e73-925e-4a26-a982-522588ab9c4d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/sandbox/src/test/java/ru/course/DistTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox/src/test/java/ru/course/DistTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/resources/testng-groups.xml" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/resources/testng-groups.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +92,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4770115" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -113,7 +114,7 @@
       <recent name="ru.course.mantisbt.appmanager" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ChangePasswordTest">
+  <component name="RunManager" selected="TestNG.GroupCreateTest">
     <configuration name="ChangePasswordTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="mantis.test" />
       <extension name="coverage">
@@ -208,10 +209,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GroupCreateTest" />
         <item itemvalue="TestNG.ChangePasswordTest" />
         <item itemvalue="TestNG.HbConnectionTest" />
         <item itemvalue="TestNG.GroupModificationTests" />
-        <item itemvalue="TestNG.GroupCreateTest" />
         <item itemvalue="TestNG.DeleteGroupTest" />
       </list>
     </recent_temporary>
@@ -299,6 +300,10 @@
         <watch expression="newIssues.toArray()[399]" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sandbox$CreateContactTest.ic" NAME="CreateContactTest Coverage Results" MODIFIED="1635856937844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
