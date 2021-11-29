@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc0d5e73-925e-4a26-a982-522588ab9c4d" name="Changes" comment="" />
+    <list default="true" id="dc0d5e73-925e-4a26-a982-522588ab9c4d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/RegistrationHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/RegistrationHelper.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +114,7 @@
       <recent name="ru.course.mantisbt.appmanager" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.CreateContactTest">
+  <component name="RunManager" selected="TestNG.ChangePasswordTest">
     <configuration name="ChangePasswordTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="mantis.test" />
       <extension name="coverage">
@@ -206,10 +209,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ChangePasswordTest" />
         <item itemvalue="TestNG.CreateContactTest" />
         <item itemvalue="TestNG.DeleteGroupTest" />
         <item itemvalue="TestNG.GroupCreateTest" />
-        <item itemvalue="TestNG.ChangePasswordTest" />
         <item itemvalue="TestNG.HbConnectionTest" />
       </list>
     </recent_temporary>
@@ -289,6 +292,16 @@
           <url>file://$PROJECT_DIR$/rest-sample/src/test/java/ru/course/TestBase.java</url>
           <line>45</line>
           <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/RegistrationHelper.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mantis/src/test/java/ru.course.mantisbt/appmanager/RegistrationHelper.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

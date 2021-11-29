@@ -38,11 +38,6 @@ public class RegistrationHelper extends HelperBase {
     click(By.cssSelector("input[type='submit']"));
   }
 
-  public void logout() {
-    wd.findElement(By.xpath("//div[@id='navbar-container']/div[2]/ul/li[3]/a/i[2]")).click();
-    wd.findElement(By.linkText("Logout")).click();
-  }
-
   public void goToUsersLists() {
     wd.get(app.getProperty("web.baseUrl") + "/manage_user_page.php");
   }
@@ -53,7 +48,8 @@ public class RegistrationHelper extends HelperBase {
 
   public void resetPassword() {
 //    click(cssSelector("input[value='Reset Password']"));
-    click(By.cssSelector("#manage-user-reset-form > fieldset > span > input"));
+//    click(By.cssSelector("#manage-user-reset-form > fieldset > span > input"));
+    click(By.cssSelector("input[value='Сбросить пароль']"));
   }
 
 }
