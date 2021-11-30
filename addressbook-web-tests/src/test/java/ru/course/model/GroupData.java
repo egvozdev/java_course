@@ -50,7 +50,7 @@ public class GroupData {
   @Id
   @Column(name="group_id")
   private int id = Integer.MAX_VALUE;
-  @ManyToMany(mappedBy = "groups")
+  @ManyToMany(mappedBy = "groups", fetch = FetchType.EAGER)
   private Set<ContactData> contacts =  new HashSet<ContactData>();
 
   public Contacts getContacts() {

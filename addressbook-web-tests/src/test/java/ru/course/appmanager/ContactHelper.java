@@ -9,7 +9,6 @@ import ru.course.model.Contacts;
 import ru.course.model.GroupData;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 public class ContactHelper extends HelperBase {
@@ -79,7 +78,7 @@ public class ContactHelper extends HelperBase {
       wd.findElements(By.name("selected[]")).get(index).click();
   }
 
-  public void selectById(int id) {
+  public void selectContactById(int id) {
     wd.findElement(By.cssSelector("input[value='"+id+"']")).click();
   }
 
@@ -100,7 +99,7 @@ public class ContactHelper extends HelperBase {
     deleteContact();
   }
   public void delete(ContactData contact) {
-    selectById(contact.getId());
+    selectContactById(contact.getId());
     deleteContact();
     confirm();
     returnToHomePage();
@@ -202,4 +201,35 @@ public class ContactHelper extends HelperBase {
 //    wd.findElement(By.xpath(String.format("//tr[.//input[@value='%s']]/td[8]/a", id))).click();
 //    wd.findElement(By.cssSelector(String.format("s[href='edit.php?id=%s]", id))).click();
   }
+
+  public void filterContactsByGroup(int id) {
+    click(By.cssSelector("select[name=\"group\"] > option[value='" + id + "']"));
+  }
+
+  public void addToGroup(ContactData contact, GroupData group) {
+    selectContactById(contact.getId());
+    selectGroupsById(group.getId());
+    click(By.xpath("//input[@value='Add to']"));
+  }
+
+  public void selectGroupsById(int id) {
+    click(By.cssSelector("select[name=\"to_group\"] > option[value='" + id + "']"));
+  }
+
+  public void removeContactFromFilteredGroups(ContactData contact, GroupData group) {
+//    selectGroupList(group);
+    selectContactById(contact.getId());
+    click(By.name("remove"));
+  }
+
+  public ContactData refresh(ContactData addingContact, Contacts contactList) {
+    ContactData contactAfter = new ContactData();
+    for (ContactData findContact : contactList) {
+      if (findContact.getId() == addingContact.getId()) {
+        contactAfter = findContact;
+      }
+    }
+    return contactAfter;
+  }
+
 }
