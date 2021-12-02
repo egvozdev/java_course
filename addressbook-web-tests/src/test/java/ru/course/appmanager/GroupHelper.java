@@ -3,6 +3,8 @@ package ru.course.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import ru.course.model.ContactData;
+import ru.course.model.Contacts;
 import ru.course.model.GroupData;
 import ru.course.model.Groups;
 
@@ -131,6 +133,16 @@ public class GroupHelper extends HelperBase {
       groupCache.add(new GroupData().withName(name).withId(id));
     }
     return new Groups(groupCache);
+  }
+
+  public GroupData refresh(GroupData addingGroup, Groups groupList) {
+    GroupData groupAfter = new GroupData();
+    for (GroupData findGroup : groupList) {
+      if (findGroup.getId().equals(addingGroup.getId())) {
+        groupAfter = findGroup;
+      }
+    }
+    return groupAfter;
   }
 
 

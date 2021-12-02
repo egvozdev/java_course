@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="dc0d5e73-925e-4a26-a982-522588ab9c4d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/appmanager/GroupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/appmanager/GroupHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/ContactDeleteFromGroupTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/ContactDeleteFromGroupTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,9 +186,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.ContactDeleteFromGroupTests" />
+        <item itemvalue="TestNG.ru.course.tests" />
         <item itemvalue="TestNG.ContactAddToGroupTests" />
         <item itemvalue="TestNG.ContactEmails" />
-        <item itemvalue="TestNG.ru.course.tests" />
       </list>
     </recent_temporary>
   </component>
@@ -262,24 +264,24 @@
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/ContactDeleteFromGroupTests.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/ContactAddToGroupTests.java</url>
           <line>52</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/appmanager/ContactHelper.java</url>
-          <line>209</line>
-          <option name="timeStamp" value="57" />
+          <url>file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/ContactDeleteFromGroupTests.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/ContactDeleteFromGroupTests.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="59" />
+          <line>48</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/addressbook-web-tests/src/test/java/ru/course/tests/ContactDeleteFromGroupTests.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

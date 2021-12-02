@@ -34,9 +34,23 @@ public class ContactDeleteFromGroupTests extends TestBase {
     }
     if (groupsHaveContacts.size() == 0) {
       app.goTo().HomePage();
+
       Contacts contactList = app.db().contacts();
       Groups groupList = app.db().groups();
-      app.contact().addToGroup(contactList.iterator().next(), groupList.iterator().next());
+
+      GroupData group = groupList.iterator().next();
+      ContactData contact = contactList.iterator().next();
+
+      app.contact().addToGroup(contact, group);
+
+      Contacts contactListNew = app.db().contacts();
+      Groups groupListNew = app.db().groups();
+
+      ContactData contactNew = app.contact().refresh(contact, contactListNew);
+      GroupData groupNew  = app.group().refresh(group, groupListNew);
+
+      groupsHaveContacts.add(groupNew);
+
     }
 
   }
